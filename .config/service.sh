@@ -15,18 +15,14 @@ function start() {
   echo '--  end of start--'
 }
 
-if [[ $# -ne 1 ]];
-then
+if [[ $# -ne 1 ]]; then
   echo "usage : $0 command ";
   echo "command : start stop restart";
-elif [ $1 == 'start' ]
-then
+elif [ $1 == 'start' ]; then
   start;
-elif [ $1 == 'stop' ]
-then
+elif [ $1 == 'stop' ]; then
   stop;
-elif [ $1 == 'restart' ]
-then
+elif [ $1 == 'restart' ]; then
   stop;
   start;
 else
