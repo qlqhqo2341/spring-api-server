@@ -12,7 +12,7 @@ function stop(){
 
 function start(){
   echo '--start of start--'
-  java -Dserver.port=8082 -jar $APPLICATION_JAR > $APPLICATION_LOG 2>&1 &
+  nohup java -Dserver.port=8082 -jar $APPLICATION_JAR > $APPLICATION_LOG 2>&1 &
   echo $! > $APPLICATION_PID
   echo '--  end of start--'
 }
