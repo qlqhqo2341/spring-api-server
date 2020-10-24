@@ -1,17 +1,19 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-APPLICATION_JAR="${APPLICATION_JAR:-./target.jar}"
+APPLICATION_JAR="${APPLICATION_JAR:-./target.jar}";
+APPLICATION_LOG="${APPLICATION_LOG:-./server.log}";
+APPLICATION_PID="${APPLICATION_PID:-./server.pid}";
 
-function stop() {
+function stop(){
   echo '--start of stop---'
-  kill -9 `cat ./server.pid`
+  kill -9 `cat $APPLICATION_PID`
   echo '--  end of stop---'
 }
 
-function start() {
+function start(){
   echo '--start of start--'
-  nohup java -Dserver.port=8082 -jar $APPLICATION_JAR > ./server.log 2>&1 &
-  echo $! > server.pid
+  nohup java -Dserver.port=8082 -jar $APPLICATION_JAR > $APPLICATION_LOG 2>&1 &
+  echo $! > $APPLICATION_PID
   echo '--  end of start--'
 }
 
