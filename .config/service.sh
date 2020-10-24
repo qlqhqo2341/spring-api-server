@@ -1,6 +1,6 @@
 #!/bin/sh
 
-APPLICATION_JAR="../target/api-0.0.1-SNAPSHOT.jar"
+APPLICATION_JAR="${APPLICATION_JAR:-./target.jar}"
 
 function stop() {
   echo '--start of stop---'
