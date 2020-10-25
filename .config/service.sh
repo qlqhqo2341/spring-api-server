@@ -6,7 +6,7 @@ APPLICATION_PID="${APPLICATION_PID:-./server.pid}";
 
 function stop(){
   echo '--start of stop---'
-  kill -9 `cat $APPLICATION_PID`
+  kill `cat $APPLICATION_PID`
   echo '--  end of stop---'
 }
 
